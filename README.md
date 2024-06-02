@@ -1,3 +1,5 @@
+This fork adds support for Minecraft pack formats up to 50 (as of 24w13a- the pack format is 31)
+
 # Resource Pack Workbench
 
 RPW is a tool for editing Minecraft resource packs.
