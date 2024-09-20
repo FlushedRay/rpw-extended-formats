@@ -1,4 +1,6 @@
-# This fork adds support for Minecraft pack formats up to 50 (as of 24w13a- the pack format is 31)
+# This fork adds support for Minecraft pack formats up to 50 (as of 24w37a- the pack format is 38)
+
+To find the current pack format, or the format for the version you are working on, check https://minecraft.wiki/w/Pack_format
 
 # Resource Pack Workbench
 
