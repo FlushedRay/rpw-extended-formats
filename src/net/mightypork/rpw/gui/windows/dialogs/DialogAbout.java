@@ -9,7 +9,6 @@ import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 
-import com.sun.prism.paint.Color;
 import net.mightypork.rpw.App;
 import net.mightypork.rpw.Const;
 import net.mightypork.rpw.Paths;
@@ -52,6 +51,7 @@ public class DialogAbout extends RpwDialog {
         vb.add(Gui.label("MCrafterzz, developer", 13, Font.PLAIN));
         vb.add(Gui.label("AkTheKnight, contributor", 13, Font.PLAIN));
         vb.add(Gui.label("Jakz, creator of the texture (un)stitcher", 13, Font.PLAIN));
+		vb.add(Gui.label("Flushed Ray, did a simple fix that nobody has done for the last 5 years", 13, Font.PLAIN));
         vb.gapl();
 
         buttonTwitterRpw = new JButton("@RPWapp", Icons.MENU_TWITTER);
