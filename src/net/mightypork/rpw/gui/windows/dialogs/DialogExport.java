@@ -10,6 +10,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import java.awt.Cursor;
+import java.awt.Desktop;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.net.URI;
+
+import javax.swing.JLabel;
+
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -96,7 +104,7 @@ public class DialogExport extends RpwDialog {
         nameField.addKeyListener(TextInputValidator.filenames());
         descriptionField = Gui.textField("", "Output file description", "Output file description");
 
-        exportToMc = Gui.checkbox(true);
+        exportToMc = Gui.checkbox(false);
 
         final String[] choices = new String[3];
         choices[MC_ALONE] = "Use this pack alone";
@@ -114,10 +122,26 @@ public class DialogExport extends RpwDialog {
         vbox.springForm(new String[]{"Resourcepack Name:", "Resourcepack Description:", "Export To Minecraft:"}, new JComponent[]{nameField, descriptionField, exportToMc});
 
         filepicker = new FileInput(this, "Select folder to export to...", Config.FilePath.EXPORT, "Select folder to export to", FileChooser.FOLDERS, true);
-        filepicker.setEnabled(false);
+        filepicker.setEnabled(true);
         vbox.add(filepicker);
 
-        vbox.springForm(new String[]{"Resourcepack Format (Refer to <a href=\"https://minecraft.wiki/w/Pack_format#List_of_resource_pack_formats\">this</a> if you don't know):", "In Minecraft:", "Unzip:"}, new JComponent[]{packMeta, mcOptsCombo, unZip});
+JLabel linkLabel = new JLabel("<html>Resourcepack Format (Refer to <a href=''>this</a> if you don't know):</html>");
+linkLabel.setCursor(new Cursor(Cursor.HAND_CURSOR));
+linkLabel.addMouseListener(new MouseAdapter() {
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        try {
+            Desktop.getDesktop().browse(new URI("https://minecraft.wiki/w/Pack_format#List_of_resource_pack_formats"));
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+});
+
+// Ensure packMeta (dropdown) stays in place
+vbox.springForm(new String[]{"", "Pack Format:", "Unzip:"}, new JComponent[]{linkLabel, packMeta, unZip});
+
+
 
         vbox.gapl();
 
