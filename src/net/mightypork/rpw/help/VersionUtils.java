@@ -74,14 +74,13 @@ public class VersionUtils {
     }
 
 
-    public static String getVersionString(int version) {
-        //@formatter:off
-        return String.format(
-                "%d.%d.%d",
-                (int) Math.floor(version / 100),
-                (int) Math.floor((version % 100) / 10),
-                (version % 10));
-        //@formatter:on
+public static String getVersionString(int version) {
+    int major = (int) Math.floor(version / 1000);          // Extracts the first digit (major)
+    int minor = (int) Math.floor((version % 1000) / 100);  // Extracts the second digit (minor)
+    int patch = (int) Math.floor((version % 100) / 10);    // Extracts the third digit (patch)
+    int ext = version % 10;                                // Extracts the fourth digit (EXT number)
+
+    return String.format("%d.%d.%d-EXT%d", major, minor, patch, ext);
     }
 
 
