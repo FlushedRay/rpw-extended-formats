@@ -1,6 +1,9 @@
-4.5.2
-452
-- Cleaned up the titlebar by removing credits and Minecraft version
-- Added credits to the about dialog
-- Open changelog button now opens the changelog dialog instead of the changelog text file
-- Fixed #130 The version field in the sidebar doesn't update when changing Minecraft version
+4.5.2-EXT2
+4522
+- 10x the Pack Formats!!!
+- Added support for EXT version numbers.
+- Added a link to the Minecraft.wiki page for pack format in the export box.
+- Modified app icon to have EXT in it so you know you're running a good version :)
+- is this loss?
+- Modified some dialogues in the About RPW and the txt inside of exported resource packs.
+- Other stuff that doesn't matter
