@@ -424,7 +424,7 @@ public class MenuMain {
         item = new JMenuItem("GitHub");
         if (ICNS) item.setIcon(Icons.MENU_GITHUB);
         item.addActionListener(Gui.openUrlListener);
-        item.setActionCommand(Paths.URL_GITHUB_REPO);
+        item.setActionCommand("https://github.com/FlushedRay/rpw-extended-formats");
         menu.add(item);
 
         menu.addSeparator();
